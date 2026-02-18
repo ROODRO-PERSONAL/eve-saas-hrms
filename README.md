@@ -154,3 +154,54 @@ Endpoint	                                    Method	                Description
 /api/leaves	                                    GET	                    List leaves
 /api/leaves/{id}	                            PATCH	                Update leave
 /api/leaves/{id}/status	                        PATCH	                Approve / Reject leave
+
+
+
+<!-- example of api requests -->
+Headers
+--------------
+Authorization: Bearer YOUR_ACCESS_TOKEN
+Accept: application/json
+Content-Type: application/json
+
+
+Requst Body
+--------------
+{
+    "name": "Rahul Das",
+    "email": "rahul.das@company.com",
+    "password": "password123",
+    "password_confirmation": "password123",
+    "role": "employee"
+}
+
+
+Example Success Response
+------------------------
+{
+    "message": "User registered successfully",
+    "data": {
+        "id": 5,
+        "name": "Rahul Das",
+        "email": "rahul.das@company.com",
+        "role": "employee",
+        "company_id": 2,
+        "created_at": "2026-02-18T10:15:00.000000Z"
+    }
+}
+
+
+
+<!-- example login -->
+POST /api/login
+
+{
+  "email": "admin@example.com",
+  "password": "password"
+}
+
+Expected Response
+-----------------
+{
+  "token": "1|xxxxx..."
+}
