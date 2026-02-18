@@ -101,47 +101,56 @@ Ensure unique email addresses for employees and users.
 
 API Endpoints Summary :-
 ============================
-Authentication ==>
+Authentication
+==============
+Endpoint	                        Method	                Description
+/api/login	                        POST	                Login user
+/api/logout	                        POST	                Logout user
+/api/register	                    POST	                Register new user
+/api/me	                            GET	                    Get authenticated user
 
-Endpoint	                                    Method	                Description
---------                                        ------                  ------------
 
-/api/login	                                    POST	                Login user, returns token
-/api/logout	                                    POST	                Logout user
-/api/register	                                POST	                Register new user
-/api/me	                                        GET	                    Get authenticated user
+Companies
+==============
+Endpoint	                        Method	                Description
+/api/companies	                    GET	                    List companies
+/api/companies	                    POST	                Create company with admin
+/api/companies/{id}	                GET	                    View company
+/api/companies/{id}	                PUT	                    Update company
+/api/companies/{id}	                DELETE	                Delete company
+
+
+Users
+=======
+Endpoint	                        Method	                Description
+/api/users	                        GET	                    List users
+/api/users	                        POST	                Create user
+/api/users/{id}	                    GET	                    View user
+/api/users/{id}	                    PUT	                    Update user
+/api/users/{id}	                    DELETE	                Delete user
+
 
 Employees
 =========
-Endpoint	                                    Method	                Description
-/api/employees	                                GET	                    List all employees
-/api/employees	                                POST	                Add employee
-/api/employees/{id}	                            GET	                    View employee
-/api/employees/{id}	                            PUT	                    Update employee
-/api/employees/{id}	                            DELETE	                Delete employee
+Endpoint	                        Method	                Description
+/api/employees	                    GET	                    List employees
+/api/employees	                    POST	                Add employee
+/api/employees/{id}	                GET	                    View employee
+/api/employees/{id}	                PUT	                    Update employee
+/api/employees/{id}	                DELETE	                Delete employee
 
 
 Attendance
 ============
-Endpoint	                                    Method	                Description
-/api/attendance/clock-in/{employee_id}	        POST	                Clock-in employee
-/api/attendance/clock-out/{employee_id}	        POST	                Clock-out employee
-/api/attendance	GET	List attendances
+Endpoint	                                    Method	            Description
+/api/attendance/clock-in/{employee_id}	        POST	            Clock in
+/api/attendance/clock-out/{employee_id}	        POST	            Clock out
+/api/attendance	                                GET	                Attendance list
 
 Leaves
 ==========
 Endpoint	                                    Method	                Description
 /api/leaves/apply	                            POST	                Apply leave
-/api/leaves/{id}	                            PATCH	                Update leave details
-/api/leaves/{id}/status                     	PATCH	                Approve/reject leave
 /api/leaves	                                    GET	                    List leaves
-
-
-Companies
-==============
-Endpoint	                                    Method	                Description
-/api/companies	                                GET	                    List companies
-/api/companies	                                POST	                Create company
-/api/companies/{id}	                            GET	                    View company
-/api/companies/{id}	                            PUT	                    Update company
-/api/companies/{id}	                            DELETE	                Delete company
+/api/leaves/{id}	                            PATCH	                Update leave
+/api/leaves/{id}/status	                        PATCH	                Approve / Reject leave

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->index(['company_id', 'email']); // for faster tenant queries
+            $table->index(['company_id', 'email']);
         });
     }
 

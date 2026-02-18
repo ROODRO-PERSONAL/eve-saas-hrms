@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('api_tokens', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->string('token', 512); // plain token
+            $table->string('token', 512);
             $table->timestamps();
 
             $table->index('user_id');
